@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  elixir:
+    build: ./elixir
+    volumes:
+      - ./..:/app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+  neovim:
+    build: ./neovim
+    volumes:
+      - ./..:/app
+  db:
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    restart: always
