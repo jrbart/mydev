@@ -17,7 +17,7 @@ RUN MIX_ENV=prod mix compile
 RUN MIX_ENV=prod mix elixir_ls.release2 -o /usr/local/elixirls
 
 WORKDIR /app
-CMD /usr/src/distant/target/release/distant server listen
+CMD sh ./listen
 
 # target/release/distant
 

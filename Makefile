@@ -8,5 +8,5 @@ stop:
 	docker-compose stop
 
 nvim:
-	docker-compose exec neovim zsh
+	docker-compose exec neovim ash
 

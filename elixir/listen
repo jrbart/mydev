@@ -1,0 +1,1 @@
+/usr/src/distant/target/release/distant server listen --port 2222 --key-from-stdin < /dev/zero

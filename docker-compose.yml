@@ -4,9 +4,11 @@ services:
   elixir:
     build: ./elixir
     volumes:
-      - ./..:/app
+      - ./../ex/midterm:/app
     ports:
       - "4000:4000"
+    secrets:
+      - distant_key
     depends_on:
       - db
   neovim:
@@ -19,3 +21,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     restart: always
+secrets:
+  distant_key:
+    file: ./distant.txt
